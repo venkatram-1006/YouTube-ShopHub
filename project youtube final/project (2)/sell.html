@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube ShopHub</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&family=Poppins:ital,wght@0,400;0,500;1,500;1,600;1,800&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="particles.js"></script>
+    <script src="app.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+<style>
+    :root {
+        --blue: #0d6efd;
+        --red: #dc3545;
+    }
+
+    * {
+        
+        margin: 10;
+        padding: 100;
+        
+        box-sizing: border-box;}
+
+.container {
+            margin-left: -20px
+        }
+
+        .container-fluid {
+
+            font-family: 'Josefin Sans', sans-serif;
+            min-height: 1vh;
+            margin-bottom: 0PX;
+
+            width: 100%;
+            background: rgb(250, 252, 250);
+            color: rgba(8, 8, 8, 0.863);
+            display: grid;
+            grid-template-columns: 0.20fr 0.04fr;
+            grid-template-rows: 0.2fr 3fr;
+            grid-template-areas: 'header header header'
+                'sidebar introAnime introAnime'
+                'sidebar animeList animeList'
+        }
+
+        .header {
+            display: flex;
+            margin-top: 10px;
+            height: 80px;
+            justify-content: space-between;
+            align-items: center;
+            
+            color: white;
+            grid-area: header;
+        }
+
+        .header .search {
+            margin-top: 36px;
+        }
+
+        .header .nav-item {
+            text-decoration: none;
+            margin-right: 9px;
+        }
+
+        .header .search i {
+            scale: 1.8;
+            margin-top: 9px;
+            margin-left: 13px;
+            cursor: pointer;
+            color: var(--blue);
+        }
+
+        .header h2 {
+            font-size: 25px;
+            padding: 20px;
+            color: white;
+            font-family: 'Bruno Ace SC', cursive;
+            margin-left: 0px;
+        }
+
+        .header button {
+            margin-right: 25px;
+            margin-left: 30px;
+            border: 2px solid;
+            transition: transform 1.2s;
+        }
+
+        .header button:hover {
+            transform: scale(0.9);
+            color: white;
+        }
+
+        .header i:hover {
+            color: white;
+            background: skyblue;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transform: rotate(190deg);
+        }
+
+        .header input {
+            padding: 3px;
+        }
+
+        .header i {
+            margin-top: 3.5px;
+            color: aqua;
+            cursor: pointer;
+            transition: transform 1.2s;
+            display: none;
+            /*change this later! dont forget */
+        }
+
+
+        .sidebar {
+            
+            margin-right: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 200vh;
+            grid-area: sidebar;
+            padding: 30px;
+            transform: translateX(-10px);
+            position: sticky;
+        }
+
+        .sidebar i {
+            color: #1004b1;
+            cursor: pointer;
+            transition: transform 1.2s;
+        }
+
+        .sidebar i:hover {
+            transform: translateX(7px);
+        }
+
+        .introAnime {
+            grid-area: introAnime;
+
+            margin-top: 32px;
+
+        }
+
+        .animeList .card {
+            position: relative;
+
+        }
+
+        .animeList .card:hover {
+            background: linear-gradient(rgba(0, 0, 255, 0.05), rgba(0, 255, 0, 0.15));
+        }
+
+        .introAnime .card-img-top {
+            height: 45vh;
+            object-fit: cover;
+        }
+
+        .introAnime .card .card-img-overlay {
+            font-size: 15px;
+
+            color: white;
+            padding-top: 90px;
+            background: linear-gradient(rgba(0, 0, 0.75), rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.95));
+        }
+
+        .introAnime .card .card-img-overlay p {
+            margin-top: 17px;
+        }
+
+        .introAnime .card .card-img-overlay i {
+            color: white;
+        }
+
+        .introAnime .card .card-img-overlay button {
+            padding: 7px;
+            margin-right: 10px;
+            border-radius: 6px;
+            border: 0;
+            transition: 1.3s;
+            background: transparent;
+            position: absolutey;
+            font-family: poppins;
+            background: white;
+            font-weight: bolder;
+            z-index: 10;
+            cursor: pointer;
+            color: black;
+            display: flex;
+
+        }
+
+        .h2 {
+            color: white;
+        }
+
+        .introAnime .card .card-img-overlay button::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 50%;
+            border-radius: 7px;
+            z-index: -1;
+            background: orange;
+            transition: 0.7s;
+        }
+
+        .introAnime .card .card-img-overlay button:hover:after {
+            width: 100%;
+
+        }
+
+        .introAnime .card .card-img-overlay .age,
+        .hd {
+            background: white;
+            color: #0d6efd;
+            padding: 65px;
+            border-radius: 5px;
+            font-size: 12px;
+            margin-bottom: 5px;
+        }
+
+        .animeList .card {
+            height: 30vh;
+            width: 20vh;
+            margin-right: 9px;
+        }
+
+        .animeList .card-group {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .animeList .card-img-overlay {
+            margin-top: 95px;
+            color: rgb(255, 255, 255);
+            text-shadow: 2px 3px #f549047c;
+            cursor: pointer;
+            transition: 0.7s;
+            opacity: 0;
+            height: 120px;
+        }
+
+        .animeList .card-img-overlay .card-title {
+            font-size: 14px;
+        }
+
+        .animeList .card-img-overlay:hover {
+            background: black;
+            opacity: 1;
+        }
+
+        .animeList .card-img-overlay .btn {
+            text-shadow: none;
+
+        }
+
+        .animeList .card-img-top {
+            height: 90vh;
+            position: relative;
+        }
+
+        .btn {
+            font-size: 12px;
+            margin-top: 6px;
+            margin-left: -4px;
+            cursor: pointer;
+        }
+
+        .animeList h2 {
+            margin-bottom: 52px;
+            margin-left: 0px;
+            font-size: 20px;
+        }
+
+        .animeList .card .wishlist {
+            scale: 1.5;
+            position: absolute;
+            top: 10px;
+            left: 83%;
+            cursor: pointer;
+            transition: 0.8s;
+            color: grey;
+            transition: all 1.9s;
+        }
+
+        .animeList .card .wishlist:active {
+            transform: scale(1.9);
+        }
+
+        .active {
+            color: rgb(238, 231, 231);
+        }
+
+        #page2 {
+            background: linear-gradient(rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.85)), url('https://w0.peakpx.com/wallpaper/24/511/HD-wallpaper-anime-anime-anime-collage.jp');
+            animation-name: animebackground;
+            animation-duration: 20s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes animebackground {
+            from {
+                background-position: 0 0;
+            }
+
+            to {
+                background-position: -2000px 0;
+            }
+        }
+
+        #page2 {
+            max-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #page2 h1 {
+            margin-bottom: 0px;
+            transform: translateY(-18px);
+        }
+
+        #page2 .quoteAuthor {
+            display: flex;
+            justify-content: flex-end;
+            font-size: 12px;
+            margin-top: 9px;
+        }
+
+        #page2 .card {
+            box-shadow: 0px 1px 8px 5px rgba(220, 83, 52, 0.667);
+            height: 250px;
+            background: #ffffff26;
+            width: 100%;
+            padding: 30px;
+            font-size: 12px;
+            display: flex;
+            overflow: hidden;
+            text-align: center;
+            font-weight: bolder;
+            position: relative;
+        }
+
+        #page2 .card .wrapper {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        #page2 .card .wrapper ul {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 100px;
+            cursor: pointer;
+
+        }
+
+        #page2 .card .wrapper ul li {
+            display: flex;
+            border-radius: 50%;
+            border: 2px solid var(--blue);
+            padding: 6px;
+            margin-right: 5px;
+            transform: translateX(-20px);
+            justify-content: space-between;
+        }
+
+        #page2 .card .wrapper button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, 220%);
+        }
+
+        #cartPage {
+
+            position: fixed;
+            top: 0;
+            right: -400px;
+            /*selfNote: change this back again,  dont forget */
+            bottom: 0;
+            border-radius: 12px;
+            width: 300px;
+            background: #3c6edaec;
+            z-index: 9999;
+            padding: 20px;
+            transition: all 0.8s ease-in-out;
+            display: flex;
+
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        #cartPage .btn {
+            top: 5px;
+            position: absolute;
+            left: 36%;
+        }
+
+        #cartPage li {
+            list-style: none;
+            text-decoration: none;
+            color: white;
+            position: absolute;
+            top: 90px;
+        }
+
+        #cartPage img {
+            height: 70px;
+            width: 60px;
+            position: relative;
+        }
+
+        #cartPage div {
+            font-family: poppins;
+            color: white;
+            margin-top: 15px;
+        }
+
+        #cartPage.showPage {
+            right: 0px;
+        }
+
+        #wishCart .wishlist-item {
+            margin-bottom: 10px;
+        }
+
+
+        @media screen and (max-width:768px) {
+            .introAnime .card .card-img-overlay {
+                padding-top: 50px;
+
+            }
+
+            .introAnime {}
+
+            .header .nav button:nth-child(3) {
+                display: none;
+            }
+
+            .header .search {
+                position: relative;
+            }
+
+            .header .search i {
+                position: absolute;
+                top: 0;
+                left: 77%;
+            }
+
+            .sidebar {
+                margin-left: 0px
+            }
+
+            .sidebar i {
+                margin-bottom: 50px;
+            }
+        }
+</style>
+
+<body>
+    <div class="container-fluid">
+        <div class="header  mt-2 mt-lg-5 d-flex ">
+            <nav class="navbar navbar-fixed-top   w-100  navbar-expand-lg bg-primary">
+                <a class="navbar-brand" style="font-size: 30px;        font-family: 'Bruno Ace SC', cursive;
+                  " href="#">YouTube ShopHub</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" style="color: white;"
+                                href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="wishToggle" style="color: white;" href="#">Wishlist - <span
+                                    id="wishCount"></span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Loginpage.html" style="color: white; cursor: pointer;">Login</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <input class="form-control m-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-danger" type="submit">Search</button>
+                    </form>
+                </div>
+            </nav>
+        </div>
+        <div class="sidebar">
+            <i data-toggle="tooltip" onclick="switchPage()" title="Home" class="fa fa-home fa-2x"></i>
+            <a href="review.html"> <i data-toggle="tooltip" title="Our Proud Customers"
+                    class="fa fa-quote-left fa-2x"></i></a>
+            <a href="todaysoffer.html"> <i data-toggle="tooltip" title="Today Offers"
+                    class="fa fa-superpowers fa-2x"></i></a>
+            <a href="sell.html"> <i data-toggle="tooltip"
+                    title="Sell Your Channel " class="fa fa-podcast fa-2x"></i></a>
+            <a href="ABOUTUS.HTML"><i data-toggle="tooltip" title="About Us" class="fa fa-search fa-2x"></i></a>
+            <a href="profile.html"> <i data-toggle="tooltip" title="Profile" class="fa fa-server fa-2x"></i></a>
+        </div>
+        <div id="page1 ">
+            <section id="enroll">
+                <div class="container">
+                    <h1>SELL<span style="color: var(--blue);">YOUR</span><span style="color: var(--RED);">CHANNEL</span></h1>
+                    <p STYLE="COLOR:GREY">"Unlock Your YouTube Dreams: Explore, Purchase, and Elevate Your Online Presence with YouTube Shop Hub's Premium Channels and Services."</p>
+                    <form>
+                        <div class="container">
+                            <div id="signup">
+                                <h3><span style="color: var(--blue);"></span>REGI<span style="color: var(--red);">STER</span></h3>
+                                
+                                <form class="signup-form">
+                                    <div class="form-group">
+                                        <h4>Name:</h4>
+                                        <input type="text" id="name" placeholder="Eg: James Wan" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <h4>Mobile Number:</h4>
+                                        <input type="text" id="mobileNumber" name="mobileNumber" pattern="[0-9]*"
+                                            inputmode="numeric" placeholder="Enter mobile no" required>
+
+                                    </div>
+                                    <div class="form-group">
+                                        <h4>E-mail:</h4>
+                                        <input type="text" id="e-mail" placeholder="jameswan@gmail.com" required>
+                                    </div>
+                                    <div>
+                                        <label> Password: </label><BR>
+                                            <input type="password" placeholder="give strong password" required/><BR> <br>
+                                    </div>
+
+                                    <h4>Favourite Channel:</h4>
+                                    <input type="checkbox" name="purpose" /><label> Educational</label><br>
+                                    <input type="checkbox" name="purpose" /><label> Sports</label><br>
+                                    <!--checkbox used for select multiple options-->
+                                    <input type="checkbox" name="purpose" /><label> Recipes</label><br>
+                                    <input type="checkbox" name="purpose" /><label> Entertainment</label><br>
+                                    <input type="checkbox" name="purpose" /><label> Tech</label><br>
+                                    <input type="checkbox" name="purpose" /><label> Travel</label>
+
+                                    </select><br><br>
+                                    <h4>Purpose:</h4>
+                                    <input type="radio" name="purpose" /><label>visitors</label><br>
+                                    <input type="radio" name="purpose" /><label>Sellers</label><br>
+                                    <!--checkbox used for select multiple options-->
+                                    <input type="radio" name="purpose" /><label>Buyers</label><br>
+                                    <input type="radio" name="purpose" /><label>Both</label><br>
+                                    <input type="radio" name="purpose" /><label>member</label><br><br>
+                                    <div class="form-group" >
+                                        <div>
+                                            <h4> set your channel created date</h4>
+ <input type="date"/><BR><BR>
+ <h4> upload your channel's studio analytics photo</h4>
+<input type="file"/><BR><BR>
+<h4>pls give more details about your channel description</h4>
+<textarea coln="10" row="25"/></textarea><br>
+<input type="submit"/><BR><BR>
+                                        </div>
+                                        <h4>country:</h4>
+                                        <select style="color: black;" name="country">
+                                            <option value="AFGHANISTAN">AFGHANISTAN</option>
+                                            <option value="ALBANIA">ALBANIA</option>
+                                            <option value="ALGERIA">ALGERIA</option>
+                                            <option value="AMERICAN SAMOA">AMERICAN SAMOA</option>
+                                            <option value="ANDORRA">ANDORRA</option>
+                                            <option value="ANGOLA">ANGOLA</option>
+                                            <option value="ANGUILLA">ANGUILLA</option>
+                                            <option value="ANTARCTICA">ANTARCTICA</option>
+                                            <option value="ANTIGUA ">ANTIGUA </option>
+                                            <option value="ARGENTINA">ARGENTINA</option>
+                                            <option value="ARMENIA">ARMENIA</option>
+                                            <option value="ARUBA">ARUBA</option>
+                                            <option value="AUSTRALIA">AUSTRALIA</option>
+                                            <option value="AUSTRIA">AUSTRIA</option>
+                                            <option value="AZERBAIJAN">AZERBAIJAN</option>
+                                            <option value="BAHAMAS">BAHAMAS</option>
+                                            <option value="BAHRAIN">BAHRAIN</option>
+                                            <option value="BANGLADESH">BANGLADESH</option>
+                                            <option value="BARBADOS">BARBADOS</option>
+                                            <option value="BELARUS">BELARUS</option>
+                                            <option value="BELGIUM">BELGIUM</option>
+                                            <option value="BELIZE">BELIZE</option>
+                                            <option value="BENIN">BENIN</option>
+                                            <option value="BERMUDA">BERMUDA</option>
+                                            <option value="BHUTAN">BHUTAN</option>
+                                            <option value="BOLIVIA">BOLIVIA</option>
+                                            <option value="BOSNIA ">BOSNIA</option>
+                                            <option value="BOTSWANA">BOTSWANA</option>
+                                            <option value="BOUVET ">BOUVET</option>
+                                            <option value="BRAZIL">BRAZIL</option>
+                                            <option value="BRITISH">BRITISH</option>
+                                            <option value="BRUNEI DARUSSALAM">BRUNEI</option>
+                                            <option value="BULGARIA">BULGARIA</option>
+                                            <option value="BURKINA FASO">BURKINA FASO</option>
+                                            <option value="BURUNDI">BURUNDI</option>
+                                            <option value="CAMBODIA">CAMBODIA</option>
+                                            <option value="CAMEROON">CAMEROON</option>
+                                            <option value="CANADA">CANADA</option>
+                                            <option value="CAPE VERDE">CAPE VERDE</option>
+                                            <option value="CAYMAN ">CAYMAN</option>
+                                            <option value="AFRICAN">AFRICAN</option>
+                                            <option value="CHAD">CHAD</option>
+                                            <option value="CHILE">CHILE</option>
+                                            <option value="CHINA">CHINA</option>
+                                            <option value="CHRISTMAS ">CHRISTMAS</option>
+                                            <option value="COCOS">COCOS</option>
+                                            <option value="COLOMBIA">COLOMBIA</option>
+                                            <option value="COMOROS">COMOROS</option>
+                                            <option value="CONGO">CONGO</option>
+                                            <option value="COOK ISLANDS">COOK ISLANDS</option>
+                                            <option value="COSTA RICA">COSTA RICA</option>
+                                            <option value="COTE D'IVOIRE">COTE D'IVOIRE</option>
+                                            <option value="CROATIA">CROATIA</option>
+                                            <option value="CUBA">CUBA</option>
+                                            <option value="CYPRUS">CYPRUS</option>
+                                            <option value="CZECH REPUBLIC">CZECH REPUBLIC</option>
+                                            <option value="DENMARK">DENMARK</option>
+                                            <option value="DJIBOUTI">DJIBOUTI</option>
+                                            <option value="DOMINICA">DOMINICA</option>
+                                            <option value="DOMINICAN REPUBLIC">DOMINICAN REPUBLIC</option>
+                                            <option value="ECUADOR">ECUADOR</option>
+                                            <option value="EGYPT">EGYPT</option>
+                                            <option value="EL SALVADOR">EL SALVADOR</option>
+                                            <option value="GUINEA"> GUINEA</option>
+                                            <option value="ERITREA">ERITREA</option>
+                                            <option value="ESTONIA">ESTONIA</option>
+                                            <option value="ETHIOPIA">ETHIOPIA</option>
+                                            <option value="FALKLAND">FALKLAND</option>
+                                            <option value="FAROE">FAROE</option>
+                                            <option value="FIJI">FIJI</option>
+                                            <option value="FINLAND">FINLAND</option>
+                                            <option value="FRANCE">FRANCE</option>
+                                            <option value="FRENCH GUIANA">FRENCH GUIANA</option>
+                                            <option value="POLYNESIA">POLYNESIA</option>
+                                            <option value="FRENCH">FRENCH</option>
+                                            <option value="GABON">GABON</option>
+                                            <option value="GAMBIA">GAMBIA</option>
+                                            <option value="GEORGIA">GEORGIA</option>
+                                            <option value="GERMANY">GERMANY</option>
+                                            <option value="GHANA">GHANA</option>
+                                            <option value="GIBRALTAR">GIBRALTAR</option>
+                                            <option value="GREECE">GREECE</option>
+                                            <option value="GREENLAND">GREENLAND</option>
+                                            <option value="GRENADA">GRENADA</option>
+                                            <option value="GUADELOUPE">GUADELOUPE</option>
+                                            <option value="GUAM">GUAM</option>
+                                            <option value="GUATEMALA">GUATEMALA</option>
+                                            <option value="GUINEA">GUINEA</option>
+                                            <option value="GUINEA-BISSAU">GUINEA-BISSAU</option>
+                                            <option value="GUYANA">GUYANA</option>
+                                            <option value="HAITI">HAITI</option>
+                                            <option value="HEARD">HEARD</option>
+                                            <option value="HOLY SEE">HOLY SEE</option>
+                                            <option value="HONDURAS">HONDURAS</option>
+                                            <option value="HONG KONG">HONG KONG</option>
+                                            <option value="HUNGARY">HUNGARY</option>
+                                            <option value="ICELAND">ICELAND</option>
+                                            <option value="INDIA">INDIA</option>
+                                            <option value="INDONESIA">INDONESIA</option>
+                                            <option value="IRAN">IRAN</option>
+                                            <option value="IRAQ">IRAQ</option>
+                                            <option value="IRELAND">IRELAND</option>
+                                            <option value="ISRAEL">ISRAEL</option>
+                                            <option value="ITALY">ITALY</option>
+                                            <option value="JAMAICA">JAMAICA</option>
+                                            <option value="JAPAN">JAPAN</option>
+                                            <option value="JORDAN">JORDAN</option>
+                                            <option value="KAZAKHSTAN">KAZAKHSTAN</option>
+                                            <option value="KENYA">KENYA</option>
+                                            <option value="KIRIBATI">KIRIBATI</option>
+                                            <option value="KOREA">KOREA</option>
+                                            <option value="KOREA, REP">KOREA,REP</option>
+                                            <option value="KUWAIT">KUWAIT</option>
+                                            <option value="KYRGYZSTAN">KYRGYZSTAN</option>
+                                            <option value="LAO">LAO</option>
+                                            <option value="LATVIA">LATVIA</option>
+                                            <option value="LEBANON">LEBANON</option>
+                                            <option value="LESOTHO">LESOTHO</option>
+                                            <option value="LIBERIA">LIBERIA</option>
+                                            <option value="LIBYAN">LIBYAN</option>
+                                            <option value="LIECHTENSTEIN">LIECHTENSTEIN</option>
+                                            <option value="LITHUANIA">LITHUANIA</option>
+                                            <option value="LUXEMBOURG">LUXEMBOURG</option>
+                                            <option value="MACAO">MACAO</option>
+                                            <option value="MACEDONIA">MACEDONIA</option>
+                                            <option value="MADAGASCAR">MADAGASCAR</option>
+                                            <option value="MALAWI">MALAWI</option>
+                                            <option value="MALAYSIA">MALAYSIA</option>
+                                            <option value="MALDIVES">MALDIVES</option>
+                                            <option value="MALI">MALI</option>
+                                            <option value="MALTA">MALTA</option>
+                                            <option value="MARSHALL">MARSHALL</option>
+                                            <option value="MARTINIQUE">MARTINIQUE</option>
+                                            <option value="MAURITANIA">MAURITANIA</option>
+                                            <option value="MAURITIUS">MAURITIUS</option>
+                                            <option value="MAYOTTE">MAYOTTE</option>
+                                            <option value="MEXICO">MEXICO</option>
+                                            <option value="MICRONESIA">MICRONESIA</option>
+                                            <option value="MOLDOVA">MOLDOVA</option>
+                                            <option value="MONACO">MONACO</option>
+                                            <option value="MONGOLIA">MONGOLIA</option>
+                                            <option value="MONTSERRAT">MONTSERRAT</option>
+                                            <option value="MOROCCO">MOROCCO</option>
+                                            <option value="MOZAMBIQUE">MOZAMBIQUE</option>
+                                            <option value="MYANMAR">MYANMAR</option>
+                                            <option value="NAMIBIA">NAMIBIA</option>
+                                            <option value="NAURU">NAURU</option>
+                                            <option value="NEPAL">NEPAL</option>
+                                            <option value="NETHERLANDS">NETHERLANDS</option>
+                                            <option value="ANTILLES">ANTILLES</option>
+                                            <option value="NEW CALEDONIA">NEW CALEDONIA</option>
+                                            <option value="NEW ZEALAND">NEW ZEALAND</option>
+                                            <option value="NICARAGUA">NICARAGUA</option>
+                                            <option value="NIGER">NIGER</option>
+                                            <option value="NIGERIA">NIGERIA</option>
+                                            <option value="NIUE">NIUE</option>
+                                            <option value="NORFOLK">NORFOLK</option>
+                                            <option value="NORTHERN MARIANA">NORTHERN MARIANA</option>
+                                            <option value="NORWAY">NORWAY</option>
+                                            <option value="OMAN">OMAN</option>
+                                            <option value="PAKISTAN">PAKISTAN</option>
+                                            <option value="PALAU">PALAU</option>
+                                            <option value="PALESTINIAN">PALESTINIAN</option>
+                                            <option value="PANAMA">PANAMA</option>
+                                            <option value="PAPUA NEW GUINEA">PAPUA NEW GUINEA</option>
+                                            <option value="PARAGUAY">PARAGUAY</option>
+                                            <option value="PERU">PERU</option>
+                                            <option value="PHILIPPINES">PHILIPPINES</option>
+                                            <option value="PITCAIRN">PITCAIRN</option>
+                                            <option value="POLAND">POLAND</option>
+                                            <option value="PORTUGAL">PORTUGAL</option>
+                                            <option value="PUERTO RICO">PUERTO RICO</option>
+                                            <option value="QATAR">QATAR</option>
+                                            <option value="REUNION">REUNION</option>
+                                            <option value="ROMANIA">ROMANIA</option>
+                                            <option value="RUSSIAN FEDERATION">RUSSIAN FEDERATION</option>
+                                            <option value="RWANDA">RWANDA</option>
+                                            <option value="SAINT HELENA">SAINT HELENA</option>
+                                            <option value="SAINT KITTS">SAINT KITTS </option>
+                                            <option value="SAINT LUCIA">SAINT LUCIA</option>
+                                            <option value="PIERRE AND MIQUELON">PIERRE AND MIQUELON</option>
+                                            <option value="VINCENT">SVINCENT</option>
+                                            <option value="SAMOA">SAMOA</option>
+                                            <option value="SAN MARINO">SAN MARINO</option>
+                                            <option value="SAO TOME>SAO TOME</option>
+                                                                           <option value=" SAUDI ARABIA">SAUDI ARABIA
+                                            </option>
+                                            <option value="SENEGAL">SENEGAL</option>
+                                            <option value="SERBIA">SERBIA</option>
+                                            <option value="SEYCHELLES">SEYCHELLES</option>
+                                            <option value="SIERRA LEONE">SIERRA LEONE</option>
+                                            <option value="SINGAPORE">SINGAPORE</option>
+                                            <option value="SLOVAKIA">SLOVAKIA</option>
+                                            <option value="SLOVENIA">SLOVENIA</option>
+                                            <option value="SOLOMON">SOLOMON</option>
+                                            <option value="SOMALIA">SOMALIA</option>
+                                            <option value="SOUTH AFRICA">SOUTH AFRICA</option>
+                                            <option value="GEORGIA">GEORGIA</option>
+                                            <option value="SPAIN">SPAIN</option>
+                                            <option value="SRI LANKA">SRI LANKA</option>
+                                            <option value="SUDAN">SUDAN</option>
+                                            <option value="SURINAME">SURINAME</option>
+                                            <option value="JAN MAYEN">JAN MAYEN</option>
+                                            <option value="SWAZILAND">SWAZILAND</option>
+                                            <option value="SWEDEN">SWEDEN</option>
+                                            <option value="SWITZERLAND">SWITZERLAND</option>
+                                            <option value="SYRIAN">SYRIAN</option>
+                                            <option value="TAIWAN">TAIWAN</option>
+                                            <option value="TAJIKISTAN">TAJIKISTAN</option>
+                                            <option value="TANZANIA">TANZANIA</option>
+                                            <option value="THAILAND">THAILAND</option>
+                                            <option value="TIMOR-LESTE">TIMOR-LESTE</option>
+                                            <option value="TOGO">TOGO</option>
+                                            <option value="TOKELAU">TOKELAU</option>
+                                            <option value="TONGA">TONGA</option>
+                                            <option value="TRINIDAD">TRINIDAD</option>
+                                            <option value="TUNISIA">TUNISIA</option>
+                                            <option value="TURKEY">TURKEY</option>
+                                            <option value="TURKMENISTAN">TURKMENISTAN</option>
+                                            <option value="TURKS">TURKS</option>
+                                            <option value="TUVALU">TUVALU</option>
+                                            <option value="UGANDA">UGANDA</option>
+                                            <option value="UKRAINE">UKRAINE</option>
+                                            <option value="UAE">UAE</option>
+                                            <option value="UNITED KINGDOM">UNITED KINGDOM</option>
+                                            <option value="UNITED STATES">UNITED STATES</option>
+                                            <option value="UNITED STATES M">UNITED STATES M</option>
+                                            <option value="URUGUAY">URUGUAY</option>
+                                            <option value="UZBEKISTAN">UZBEKISTAN</option>
+                                            <option value="VANUATU">VANUATU</option>
+                                            <option value="VENEZUELA">VENEZUELA</option>
+                                            <option value="VIET NAM">VIET NAM</option>
+                                            <option value="VIRGIN">VIRGIN</option>
+                                            <option value="VIRGIN,U.S.">VIRGIN, U.S.</option>
+                                            <option value="WALLIS AND FUTUNA">WALLIS AND FUTUNA</option>
+                                            <option value="WESTERN SAHARA">WESTERN SAHARA</option>
+                                            <option value="YEMEN">YEMEN</option>
+                                            <option value="ZAMBIA">ZAMBIA</option>
+                                            <option value="ZIMBABWE">ZIMBABWE</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <h4>age:</h4>
+                                        <select style="color: black;">
+                                            <option>Below 18</option>
+                                            <option>18-30</option>
+                                            <option>30-50</option>
+                                            <option>50-65</option>
+                                            <option>above 65</option>
+                                            
+                                        </select>
+                                    </div>
+                                </div>  
+                                <a href="https://pay.upilink.in/pay/vijayakumar15gm@oksbi?am=999" id="submit" value="Register" type="submit" class="btn btn-danger"  style="font-family:'Josefin Sans', sans-serif ; color: white;" >Register</a><br>
+            
+                            </div>
+                            </div>
+                            
+
+        </div>
+        
+    </div>
+    </div>
+    </div>
+    </div>
+    
+        
+
+    
+    
+
+</style>
+
+</html>

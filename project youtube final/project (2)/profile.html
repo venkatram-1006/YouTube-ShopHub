@@ -1,0 +1,236 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Profile</title>
+    <style>
+        /* Your existing styles here */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #141313da;
+            background-size: cover;
+            animation: backgroundAnimation 9s infinite alternate;
+        }
+
+        @keyframes backgroundAnimation {
+            0% {
+                background-image: url(https://static.vecteezy.com/system/resources/thumbnails/001/806/960/original/sparkling-particles-loop-background-clip-free-video.jpg);
+            }
+            50% {
+                background-image: url(https://static.vecteezy.com/system/resources/thumbnails/001/806/960/original/sparkling-particles-loop-background-clip-free-video.jpg);
+            }
+            100% {
+                background-image: url(https://static.vecteezy.com/system/resources/thumbnails/001/806/960/original/sparkling-particles-loop-background-clip-free-video.jpg);
+            }
+        }
+
+        .container {
+            max-width: 500px;
+            margin: auto;
+            padding: 10px;
+            background: linear-gradient(rgba(10, 0, 0, 0.021), rgba(0, 0, 0, 0.585), rgba(0, 0, 0, 0.558)),
+                        url(https://static.vecteezy.com/system/resources/thumbnails/001/806/960/original/sparkling-particles-loop-background-clip-free-video.jpg);
+            box-shadow: 0px 0px 10px rgba(76, 73, 73, 0.2);
+            border-radius: 5px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"], input[type="email"], input[type="tel"] {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: none;
+            background-color: #e3e0e0;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            background-color: #9404f4;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #05fc43a3;
+        }
+
+        table {
+            width: 100%;
+            margin-bottom: 20px;
+            border-collapse: collapse;
+        }
+
+        table td, table th {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        table th {
+            text-align: left;
+            background: transparent;
+        }
+
+        /* Footer styles */
+        .footer {
+            background-color: transparent;
+            color: #fff;
+            padding: 20px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-section {
+            margin-top: 100px;
+            flex: 1;
+            text-align: center;
+        }
+
+        .footer-icon {
+            font-size: 24px;
+            margin-right: 10px;
+        }
+
+        /* Social media icon colors */
+        .facebook-icon {
+            color: #3b5998;
+        }
+
+        .instagram-icon {
+            color: #e4405f;
+        }
+
+        /* Header styles */
+        .header {
+            background-color: transparent;
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: justify;
+        }
+
+        .header-button {
+            display: block;
+            background-color: transparent;
+            color: #fff;
+            border: none;
+            padding: 2px 15px; /* Reduced padding for smaller size */
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px; /* Reduced font size for smaller size */
+        }
+        .header-button:hover {
+            background-color: #9d05fcfe;
+        }
+
+        .home-button {
+            background: transparent;
+            color: #fff;
+            border: none;
+            padding: 5px 10px; /* Reduced padding for smaller size */
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px; /* Reduced font size for smaller size */
+        }
+        .home-button:hover {
+            background-color: #9d05fcfe;
+        }
+    </style>
+    <!-- Link to font awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+<div class="header">
+    <button class="home-button" onclick="window.location.href='index.html'">Home</button>
+<button class="header-button" onclick="window.location.href='Loginpage.html'">Login</button>
+
+</div>
+<div class="container">
+
+    <h1><font color="#fff"><u>Profile</font></u></h1>
+    <br>
+    <table>
+        <!-- Your existing table rows here -->
+        <tr>
+            <th><font color="#fff">Username:</font></th>
+            <td><input type="text" name="username" value="johndoe"></td>
+        </tr>
+
+        <tr>
+            <th><font color="#fff">Email Address:</font></th>
+            <td><input type="email" name="email" value="johndoe@example.com"></td>
+        </tr>
+
+        <tr>
+            <th><font color="#fff">Phone Number:</font></th>
+            <td><input type="tel" name="phone" value="+1-555-555-5555"></td>
+        </tr>
+
+        <tr>
+            <th><font color="#fff">Other Details:</font></th>
+            <td colspan="1" wrap><input type="text" name="Enter other details to display"
+                                         value="A student at KIOT persuing Bachelor Degree in Computer Science and Engineering"></td>
+        </tr>
+
+    </table>
+
+    <button onclick="displayProfileDetails()">View Profile</button>
+
+    <!-- Add a new <div> element to display profile details -->
+    <div class="profile-details" id="profileDetailsContainer"></div>
+
+</div>
+
+<!-- Footer section -->
+<div class="footer">
+    <div class="footer-section">
+        <i class="fas fa-phone footer-icon"></i>
+        <span>Contact Us:  +91-7339000337</span>
+    </div>
+    <div class="footer-section">
+        <span>Follow Us On<br><br></span>
+        <a href="#" class="facebook-icon footer-icon"><i class="fab fa-facebook"></i></a>
+        <a href="#" class="instagram-icon footer-icon"><i class="fab fa-instagram"></i></a>
+    </div>
+    <div class="footer-section">
+        <span>&copy; YouTube ShopHub</span>
+    </div>
+</div>
+
+<script>
+    function displayProfileDetails() {
+        // Get the input field values
+        const username = document.querySelector('input[name="username"]').value;
+        const email = document.querySelector('input[name="email"]').value;
+        const phone = document.querySelector('input[name="phone"]').value;
+        const otherDetails = document.querySelector('input[name="Enter other details to display"]').value;
+
+        // Create a string to display the details
+        const detailsString = `
+        <h2><font color="#fff">Profile Details</font></h2>
+        <p><font color="#fff"><strong>Username:</strong> ${username}</font></p>
+        <p><font color="#fff"><strong>Email Address:</strong> ${email}</font></p>
+        <p><font color="#fff"><strong>Phone Number:</strong> ${phone}</font></p>
+        <p><font color="#fff"><strong>Other Details:</strong> ${otherDetails}</font></p>
+    `;
+
+        // Set the content of the profile details container
+        const profileDetailsContainer = document.getElementById('profileDetailsContainer');
+        profileDetailsContainer.innerHTML = detailsString;
+    }
+</script>
+
+</body>
+</html>

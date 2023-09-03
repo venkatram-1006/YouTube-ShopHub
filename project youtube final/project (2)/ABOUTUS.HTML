@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+            integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+            crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css"/>
+    <title>Background Slider</title>
+</head>
+<body>
+<div>  
+        <a href="index.html"><button id="Home" class="home-button">HOME</button></a>
+</div>
+
+<div class="title">
+    <h1 style="color: rgb(101, 255, 5);"><u>About Us</u></h1>
+</div>
+
+<div class="slider-container">
+    <div class="slide active"
+         style="background-image: linear-gradient(rgba(3, 3, 3, 0.144), rgba(8, 8, 8, 0.549), rgba(236, 226, 226, 0.112)),url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1651&q=80');">
+        <!-- Central Text Area -->
+        <div class="text-area">
+            <h2>Welcome to YouTube ShopHub !!.</h2>
+            <p>The ultimate destination for all your buying and selling needs! We're thrilled to introduce ourselves and provide you with an insight into who we are, what we stand for, and how we're transforming the way you experience the world of online commerce.</p>
+        </div>
+    </div>
+  
+    <!-- Add other slides here as needed -->
+    <div
+        class="slide"
+        style="
+          background-image: linear-gradient(rgba(252, 249, 249, 0.348), rgba(243, 239, 239, 0.266), rgba(252, 252, 252, 0.134)),url('https://images.unsplash.com/photo-1511593358241-7eea1f3c84e5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1934&q=80');
+        "
+>      <div class="text-area">
+          <h3>Overview</h3>
+          <p1><strong> YouTube ShopHub, we believe that commerce should be convenient, trustworthy, and enjoyable for everyone. Our channel is a dynamic and engaging platform dedicated to helping you navigate the exciting world of buying and selling, all while providing valuable insights, tips, and tricks. Whether you're a seasoned online shopper or just starting your selling journey, we're here to empower you with knowledge and inspiration.</strong></p1>
+        </div>
+    </div>
+
+      <div
+        class="slide"
+        style="
+          background-image: url('https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1680&q=80');
+        "
+      ><div class="text-area">
+        <h3>Vision</h3>
+        <p1><strong> Our Vision is simple yet powerful: To create a community where buying and selling online is a seamless, secure, and satisfying experience. We aspire to be your go-to source for all things related to e-commerce, fostering a global community that values transparency, fairness, and innovation. We aim to transform the way you interact with online marketplaces, making them more accessible and enjoyable for everyone..</strong></p1>
+    </div>
+    </div>
+
+      <div
+        class="slide"
+        style="
+          background-image: url('https://images.unsplash.com/photo-1522735338363-cc7313be0ae0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2689&q=80');
+        "
+      ><div class="text-area">
+        <h3>Mission</h3>
+        <p1><strong>Our mission is to empower you, our valued viewers, to make informed decisions, discover hidden treasures,and build successful online businesses.</p1><p1>We are committed to: <br>Education<br>Inspiration<br>TrustWorthyness</strong></p1>
+      </div>
+    </div>
+
+      <div
+        class="slide"
+        style="
+          background-image: linear-gradient(rgba(4, 4, 4, 0.348), rgba(243, 239, 239, 0.266), rgba(252, 252, 252, 0.134)),url('https://images.unsplash.com/photo-1589487391730-58f20eb2c308?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1653&q=80');
+        "
+      ><div class="text-area">
+        <h3>Join Us on this Exciting Journey !!</h3>
+        <h4><strong>"Transforming Transactions, Connecting Communities, and Elevating E-Commerce"</strong></h4>
+        <p1><strong ><br>YouTube ShopHub, we're more than just a channel; we're a vibrant online marketplace community dedicated to your success. Join us in discovering the endless possibilities of buying and selling online, and together, we'll make the world of e-commerce more accessible, enjoyable, and prosperous.</strong></p1>
+      </div>
+    </div>
+</div>  
+      <button class="arrow left-arrow" id="left">
+          <i class="fas fa-arrow-left"></i>
+      </button>
+
+      <button class="arrow right-arrow" id="right">
+          <i class="fas fa-arrow-right"></i>
+      </button>
+</div>
+<script src="script.js"></script>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+    * {
+        box-sizing: border-box;
+    }
+    h1{
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      font-size: 40px;
+    }
+    h2{
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      font-size: xx-large;
+      color: #fff;
+    }
+    h3{
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      font-size: xx-large;
+      color: #080808;
+    }
+    h4{
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: larger;
+    }
+    p{
+      font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size:x-large;
+      color: #fff;
+
+    }
+    p1{
+      font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #030303;
+      font-size: larger;
+    }
+    body {
+        font-family: 'Roboto', sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        overflow: hidden;
+        margin: 0;
+        background-position: center center;
+        background-size: cover;
+        transition: 0.4s;
+    }
+
+    body::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.7);
+        z-index: -1;
+    }
+
+    .slider-container {
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+        height: 70vh;
+        width: 70vw;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .slide {
+        opacity: 0;
+        height: 100vh;
+        width: 100vw;
+        background-position: center center;
+        background-size: cover;
+        position: absolute;
+        top: -15vh;
+        left: -15vw;
+        transition: 0.4s ease;
+        z-index: 1;
+    }
+
+    .slide.active {
+        opacity: 1;
+    }
+
+    .arrow {
+        position: fixed;
+        background-color: #1cad73;
+        color: #fff;
+        padding: 20px;
+        font-size: 30px;
+        border: 2px solid #0fb166;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+    }
+
+    .arrow:focus {
+        outline: 0;
+    }
+
+    .left-arrow {
+        left: calc(15vw - 65px);
+    }
+
+    .right-arrow {
+        right: calc(15vw - 65px);
+    }
+
+    .text-area {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: transparent;
+        padding: 10px;
+        border-radius: 5px;
+        width: 70%;
+        text-align: center;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .text-area h2 {
+        font-size: 24px;
+        margin: 0;
+        padding: 10px;
+    }
+
+    .text-area p {
+        font-size: 18px;
+        margin: 0;
+        padding: 10px;
+    }
+
+    .text-input input {
+        width: 100%;
+        border: none;
+        outline: none;
+        font-size: 18px;
+    }
+    /* Add this block of CSS styles */
+    .home-button {
+        background-color:white; /* Set the background color to your desired color */
+        color:#030303; /* Set the text color to white or your desired color */
+        border: none;
+        padding: 6px 10px;
+        font-size: 16px;
+        position: absolute;
+        top: 30px; /* Adjust the top position to your desired position */
+        right: 20px; /* Adjust the right position to your desired position */
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease; /* Add a smooth transition for background color */
+    }
+
+    .home-button:hover {
+        background-color: #080808;
+        color: #fff; /* Change the background color on hover */
+    }
+
+/* Existing styles for other elements */
+/* ... */
+
+</style>
+<script>
+    const body = document.body
+    const slides = document.querySelectorAll('.slide')
+    const leftBtn = document.getElementById('left')
+    const rightBtn = document.getElementById('right')
+
+    let activeSlide = 0
+
+    rightBtn.addEventListener('click', () => {
+        activeSlide++
+
+        if (activeSlide > slides.length - 1) {
+            activeSlide = 0
+        }
+
+        setBgToBody()
+        setActiveSlide()
+    })
+
+    leftBtn.addEventListener('click', () => {
+        activeSlide--
+
+        if (activeSlide < 0) {
+            activeSlide = slides.length - 1
+        }
+
+        setBgToBody()
+        setActiveSlide()
+    })
+
+    setBgToBody()
+
+    function setBgToBody() {
+        body.style.backgroundImage = slides[activeSlide].style.backgroundImage
+    }
+
+    function setActiveSlide() {
+        slides.forEach((slide) => slide.classList.remove('active'))
+
+        slides[activeSlide].classList.add('active')
+    }
+</script>
+</body>
+</html>
